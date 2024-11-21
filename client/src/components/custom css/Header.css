@@ -1,0 +1,8 @@
+/* Header.css */
+.equal-height-row .card-stats {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
