@@ -6,7 +6,7 @@ import { toast } from 'react-toastify';
 // Fetch Trustees
 export const fetchTrustees = createAsyncThunk('trustees/fetchTrustees', async (_, { rejectWithValue }) => {
   try {
-    const response = await axios.get('http://localhost:5005/api/trustees');
+    const response = await axios.get('https://nasarna-backend.onrender.com/api/trustees');
     return response.data;
   } catch (error) {
     return rejectWithValue(error.response.data);
@@ -17,7 +17,7 @@ export const fetchTrustees = createAsyncThunk('trustees/fetchTrustees', async (_
 export const createTrustee = createAsyncThunk('trustees/createTrustee', async (newTrustee, { rejectWithValue, dispatch }) => {
 
   try {
-    const response = await axios.post('http://localhost:5005/api/trustees', newTrustee);
+    const response = await axios.post('https://nasarna-backend.onrender.com/api/trustees', newTrustee);
     dispatch(fetchTrustees());  // Fetch updated list
   
     return response.data;
@@ -31,7 +31,7 @@ export const updateTrustee = createAsyncThunk('trustees/updateTrustee', async (u
   try {
     const { id, ...data } = updatedTrustee;
     console.log("edit data", data);
-    const response = await axios.put(`http://localhost:5005/api/trustees/${id}`, data);
+    const response = await axios.put(`https://nasarna-backend.onrender.com/api/trustees/${id}`, data);
     dispatch(fetchTrustees());  // Fetch updated list
     return response.data;
   } catch (error) {
@@ -42,7 +42,7 @@ export const updateTrustee = createAsyncThunk('trustees/updateTrustee', async (u
 // Delete Trustee
 export const deleteTrustee = createAsyncThunk('trustees/deleteTrustee', async (id, { rejectWithValue, dispatch }) => {
   try {
-    await axios.delete(`http://localhost:5005/api/trustees/${id}`);
+    await axios.delete(`https://nasarna-backend.onrender.com/api/trustees/${id}`);
     dispatch(fetchTrustees());  // Fetch updated list
     return id;
   } catch (error) {
@@ -53,7 +53,7 @@ export const deleteTrustee = createAsyncThunk('trustees/deleteTrustee', async (i
 // Toggle Status
 export const toggleTrusteeStatus = createAsyncThunk('trustees/toggleTrusteeStatus', async (id, { rejectWithValue, dispatch }) => {
   try {
-    const response = await axios.put(`http://localhost:5005/api/trustees/${id}/toggle-status`);
+    const response = await axios.put(`https://nasarna-backend.onrender.com/api/trustees/${id}/toggle-status`);
     dispatch(fetchTrustees());  // Fetch updated list
     return response.data;
   } catch (error) {

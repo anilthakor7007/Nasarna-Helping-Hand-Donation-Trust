@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 
-const API_URL = 'http://localhost:5005/api/causes';
+const API_URL = 'https://nasarna-backend.onrender.com/api/causes';
 
 // Thunks
 export const fetchCauses = createAsyncThunk('causes/fetchCauses', async () => {

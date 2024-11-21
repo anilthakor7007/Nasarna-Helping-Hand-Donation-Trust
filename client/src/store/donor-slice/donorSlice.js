@@ -6,7 +6,7 @@ import { toast } from 'react-toastify';
 // Fetch Donors
 export const fetchDonors = createAsyncThunk('donors/fetchDonors', async (_, { rejectWithValue }) => {
   try {
-    const response = await axios.get('http://localhost:5005/api/donors');
+    const response = await axios.get('https://nasarna-backend.onrender.com/api/donors');
     return response.data;
   } catch (error) {
     return rejectWithValue(error.response.data);
@@ -16,7 +16,7 @@ export const fetchDonors = createAsyncThunk('donors/fetchDonors', async (_, { re
 // Create Donor
 export const createDonor = createAsyncThunk('donors/createDonor', async (newDonor, { rejectWithValue, dispatch }) => {
   try {
-    const response = await axios.post('http://localhost:5005/api/donors', newDonor);
+    const response = await axios.post('https://nasarna-backend.onrender.com/api/donors', newDonor);
     dispatch(fetchDonors());  // Fetch updated list
     return response.data;
   } catch (error) {
@@ -29,7 +29,7 @@ export const updateDonor = createAsyncThunk('donors/updateDonor', async (updated
   try {
     const { id, ...data } = updatedDonor;
     console.log("edit donr id and data", id, data);
-    const response = await axios.put(`http://localhost:5005/api/donors/${id}`, data);
+    const response = await axios.put(`https://nasarna-backend.onrender.com/api/donors/${id}`, data);
     dispatch(fetchDonors());  
     return response.data;
   } catch (error) {
@@ -40,7 +40,7 @@ export const updateDonor = createAsyncThunk('donors/updateDonor', async (updated
 // Delete Donor
 // export const donerCount = createAsyncThunk('donors/donorCount', async (id, { rejectWithValue, dispatch }) => {
 //   try {
-//     const response = await axios.get(`http://localhost:5005/api/donors/donor-counts/`);
+//     const response = await axios.get(`https://nasarna-backend.onrender.com/api/donors/donor-counts/`);
 //     trusteeIds
 //     dispatch(fetchDonors()); 
 //     return response;
@@ -53,7 +53,7 @@ export const fetchDonorCountsForTrustees = createAsyncThunk(
   'donors/donorCount',
   async (trusteeIds, { rejectWithValue }) => {
     try {
-      const response = await axios.post('http://localhost:5005/api/donors/donor-counts/', {
+      const response = await axios.post('https://nasarna-backend.onrender.com/api/donors/donor-counts/', {
         trusteeIds
       });
       return response.data; 
@@ -66,7 +66,7 @@ export const fetchDonorCountsForTrustees = createAsyncThunk(
 // donor count by trustee
 export const deleteDonor = createAsyncThunk('donors/deleteDonor', async (id, { rejectWithValue, dispatch }) => {
   try {
-    await axios.delete(`http://localhost:5005/api/donors/${id}`);
+    await axios.delete(`https://nasarna-backend.onrender.com/api/donors/${id}`);
     dispatch(fetchDonors()); 
     return id;
   } catch (error) {
@@ -77,7 +77,7 @@ export const deleteDonor = createAsyncThunk('donors/deleteDonor', async (id, { r
 // Toggle Donor Status
 export const toggleDonorStatus = createAsyncThunk('donors/toggleDonorStatus', async (id, { rejectWithValue, dispatch }) => {
   try {
-    const response = await axios.put(`http://localhost:5005/api/donors/${id}/toggle-status`);
+    const response = await axios.put(`https://nasarna-backend.onrender.com/api/donors/${id}/toggle-status`);
     dispatch(fetchDonors());  
     return response.data;
   } catch (error) {

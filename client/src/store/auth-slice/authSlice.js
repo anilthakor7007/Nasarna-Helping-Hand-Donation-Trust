@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 // Async thunk for signup
 export const signupUser = createAsyncThunk('auth/signupUser', async (userData, { rejectWithValue }) => {
     try {
-        const response = await axios.post('http://localhost:5005/api/users/register', userData);
+        const response = await axios.post('https://nasarna-backend.onrender.com/api/users/register', userData);
         return response.data;
     } catch (error) {
         return rejectWithValue(error.response?.data || 'Signup failed');
@@ -16,7 +16,7 @@ export const signupUser = createAsyncThunk('auth/signupUser', async (userData, {
 // Async thunk for login
 export const loginUser = createAsyncThunk('auth/loginUser', async (userData, { rejectWithValue }) => {
     try {
-        const response = await axios.post('http://localhost:5005/api/users/login', userData);
+        const response = await axios.post('https://nasarna-backend.onrender.com/api/users/login', userData);
         return response.data;
     } catch (error) {
         return rejectWithValue(error.response?.data || 'Login failed');
