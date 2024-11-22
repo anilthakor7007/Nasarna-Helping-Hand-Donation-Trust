@@ -23,7 +23,7 @@ exports.login = async (req, res) => {
 
         if (user && await bcrypt.compare(password, user.password)) {
             // Generate JWT token with user ID and role
-            const token = jwt.sign({ id: user._id, role: user.role }, process.env.JWT_SECRET);
+            const token = jwt.sign({ id: user._id, role: user.role }, process.env.jwt_secret);
 
             // Exclude password from the user object before sending response
             const { password, ...userData } = user.toObject();
