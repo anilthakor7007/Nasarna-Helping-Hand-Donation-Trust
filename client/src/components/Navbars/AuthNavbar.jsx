@@ -50,7 +50,7 @@ const AuthNavbar = () => {
               <NavItem>
               <NavLink 
   className="nav-link-icon" 
-  to="http://localhost:3036/" 
+  to="https://nasarna-donation-website.vercel.app/" 
   tag={Link} 
   target="_blank" 
   rel="noopener noreferrer" // for security reasons
