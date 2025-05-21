@@ -114,8 +114,24 @@ const Login = () => {
                   </div>
                 )}
                 <div className="text-center">
-                  <Button className="my-4" color="primary" type="submit" disabled={isSubmitting || isLoading}>
-                    {isLoading ? 'Signing in...' : 'Sign in'}
+                <Button
+                    className="my-4"
+                    color="primary"
+                    type="submit"
+                    disabled={isSubmitting || isLoading}
+                  >
+                    {isLoading ? (
+                      <>
+                        <span
+                          className="spinner-border spinner-border-sm mr-2"
+                          role="status"
+                          aria-hidden="true"
+                        ></span>
+                        Signing In
+                      </>
+                    ) : (
+                      "Sign in"
+                    )}
                   </Button>
                 </div>
               </Form>
