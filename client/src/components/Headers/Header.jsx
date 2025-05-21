@@ -14,6 +14,7 @@ const Header = () => {
   const dispatch = useDispatch();
   const { donors } = useSelector((state) => state.donors);
   const { causes, status } = useSelector((state) => state.causes);
+  console.log("status", status);
 
   useEffect(() => {
     if (status === "idle") {
@@ -129,7 +130,7 @@ const Header = () => {
               ) : (
                 <Card className="card-stats h-100 mb-4 mb-xl-0">
                   <CardBody>
-                    <Row className="align-items-center mt-3">
+                    <Row className="align-items-center">
                       <Col xs="8">
                         <CardTitle tag="h5" className="text-uppercase text-muted mb-0">
                           Total Donation Raised

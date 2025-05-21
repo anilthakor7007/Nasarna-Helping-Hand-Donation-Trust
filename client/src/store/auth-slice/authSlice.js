@@ -106,7 +106,7 @@ const authSlice = createSlice({
 
             try {
                 const decoded = jwtDecode(action.payload.token);
-                console.log(decoded);
+                // console.log(decoded);
                 state.role = decoded.role;
             } catch (error) {
                 console.error("Failed to decode token:", error);

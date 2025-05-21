@@ -33,7 +33,7 @@ import {
 } from "reactstrap";
 
 const Sidebar = (props) => {
-  console.log(props);
+  // console.log(props);
   const [collapseOpen, setCollapseOpen] = useState(false); 
   const dispatch = useDispatch(); // Initialize dispatch
   const navigate = useNavigate(); // Use navigate for redirection
@@ -57,7 +57,7 @@ const Sidebar = (props) => {
   const createLinks = (routes) => {
     return routes.map((prop, key) => {
       const path = (prop.layout || '') + (prop.path || ''); 
-      console.log(prop.layout);
+      // console.log(prop.layout);
       return (
         <NavItem key={key}>
           <NavLink
