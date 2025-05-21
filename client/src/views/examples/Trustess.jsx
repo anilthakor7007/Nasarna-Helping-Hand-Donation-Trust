@@ -166,7 +166,7 @@ const Trustees = () => {
   };
 
   const handleStatus = (id) => {
-    console.log("toggle status", id);
+    // console.log("toggle status", id);
     dispatch(toggleTrusteeStatus(id));
   };
 
@@ -175,7 +175,7 @@ const Trustees = () => {
       (trustee) => trustee._id === id
     );
     setEditTrusteeId(id);
-    console.log("edit this trustee", trusteeToEdit);
+    // console.log("edit this trustee", trusteeToEdit);
     setEditTrustee({ ...trusteeToEdit });
     setEditModalOpen(true);
   };

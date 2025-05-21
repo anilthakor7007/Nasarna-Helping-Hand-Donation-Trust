@@ -4,8 +4,8 @@ import { Navigate } from 'react-router-dom';
 const ProtectedRoute = ({ children }) => {
   const role = localStorage.getItem("role"); 
   const token = localStorage.getItem("token"); 
-  console.log("role", role);
-  console.log("token", token);
+  // console.log("role", role);
+  // console.log("token", token);
 
    // Check if either the token or role is missing
    if (!token && !role) {

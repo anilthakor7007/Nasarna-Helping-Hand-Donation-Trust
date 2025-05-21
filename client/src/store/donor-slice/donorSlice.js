@@ -101,21 +101,33 @@ const donorsSlice = createSlice({
      .addCase(fetchDonorCountsForTrustees.pending, (state) => {
       state.loading = true;
       state.error = null;
+      state.status = 'loading';
     })
     // Fulfilled state
     .addCase(fetchDonorCountsForTrustees.fulfilled, (state, action) => {
  
       state.loading = false;
       state.donorCounts = action.payload;
+      state.status = 'succeeded';
     })
     // Rejected state
     .addCase(fetchDonorCountsForTrustees.rejected, (state, action) => {
       state.loading = false;
       state.error = action.payload; // Capture the error
     })
+
+    .addCase(fetchDonors.pending, (state) => {
+      state.loading = true;
+      state.error = null;
+      state.status = 'loading';
+    }
+    )
       // Fetch Donors
       .addCase(fetchDonors.fulfilled, (state, action) => {
         state.donors = action.payload;
+        state.loading = false;
+        state.status = 'succeeded';
+
       })
       .addCase(fetchDonors.rejected, (state, action) => {
         state.error = action.payload;

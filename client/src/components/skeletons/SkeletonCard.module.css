@@ -1,0 +1,57 @@
+.card {
+    background-color: white;
+    border-radius: 0.55rem;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 360px;
+    height: 130px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
+    animation: pulse 2s infinite;
+  }
+  
+  .textGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .lineShort, .lineMedium, .circle {
+    background-color: #e5e7eb;
+    border-radius: 0.375rem;
+  }
+  
+  .lineShort {
+    width: 100px;
+    height: 16px;
+  }
+  
+  .lineMedium {
+    width: 40px;
+    height: 24px;
+  }
+  
+  .subText {
+    width: 60px;
+    height: 14px;
+    border-radius: 0.25rem;
+    background-color: #e5e7eb;
+  }
+  
+  .circle {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: #e5e7eb;
+  }
+  
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+  
