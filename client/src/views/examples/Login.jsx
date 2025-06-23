@@ -61,6 +61,7 @@ const Login = () => {
         <CardBody className="px-lg-5 py-lg-5">
           <div className="text-center text-muted mb-4">
             <small>Sign in with credentials</small>
+            <p>Use <strong>anilthakor7007@gmail.com</strong> and <strong>Anil$$123</strong> to test.</p>
           </div>
           <Formik
             initialValues={{ email: '', password: '' }}
